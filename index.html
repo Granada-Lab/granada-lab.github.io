@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Granada Lab</title>
+<meta name="description" content="Open research code and teaching tools from the Granada Lab: circadian clocks, cell-cycle dynamics and time-of-day drug responses.">
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#16181d;--muted:#5d6370;--line:#e2e0da;--accent:#1f5fbf;--accent-soft:#e8effb}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1b1e23;--ink:#eceef1;--muted:#a0a6b1;--line:#2c3038;--accent:#7fb0ff;--accent-soft:#1d2a40}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.08;margin:0 0 18px;letter-spacing:-.02em}
+.lede{font-size:clamp(17px,2.2vw,20px);max-width:680px;margin:0 0 14px}
+.sub{color:var(--muted);max-width:680px;margin:0}
+.toplinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font-size:14px;font-weight:600}
+.btn:hover{border-color:var(--accent);text-decoration:none}
+section{padding:48px 0;border-bottom:1px solid var(--line)}
+h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 22px}
+.feature{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px}
+.feature h3{font-size:24px;margin:0 0 10px;line-height:1.25}
+.feature p{margin:0 0 14px;color:var(--muted)}
+.feature .primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+@media (prefers-color-scheme:dark){.feature .primary{color:#0d1420}}
+.viz{aspect-ratio:2/1;border-radius:10px;background:var(--accent-soft);position:relative;overflow:hidden}
+.viz svg{width:100%;height:100%;display:block}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.tool,.pub{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column}
+.tool h3,.pub h3{font-size:17px;line-height:1.35;margin:0 0 8px}
+.tool p{margin:0 0 12px;color:var(--muted);font-size:15px}
+.meta{margin:0 0 8px;font-size:13px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.journal{font-weight:700;font-style:italic}
+.year{color:var(--muted)}
+.note{font-size:12px;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.authors{margin:0 0 12px;color:var(--muted);font-size:14px}
+.links{margin:auto 0 0;display:flex;gap:16px;font-size:14px;font-weight:600}
+footer{padding:36px 0 56px;color:var(--muted);font-size:14px}
+footer p{margin:0 0 6px}
+@media (max-width:720px){header{padding:48px 0 32px}.feature{grid-template-columns:1fr;padding:22px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <p class="kicker">Granada Lab · Adrián E. Granada</p>
+    <h1>Dynamics of living systems,<br>measured and modelled</h1>
+    <p class="lede">Open research code and teaching tools on circadian clocks, cell-cycle dynamics and time-of-day drug responses.</p>
+    <p class="sub">From 2020 to 2025 the group, based at Charité Universitätsmedizin Berlin, combined live-cell imaging, high-throughput experiments, mathematical modelling and time-series analysis. Every published study comes with its analysis code.</p>
+    <div class="toplinks">
+      <a class="btn" href="#teaching">Teaching</a>
+      <a class="btn" href="#software">Software</a>
+      <a class="btn" href="#publications">Publications &amp; code</a>
+      <a class="btn" href="https://scholar.google.com/citations?user=qoyqHzYAAAAJ&amp;sortby=pubdate">Google Scholar</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="teaching">
+    <div class="wrap">
+      <h2>Teaching</h2>
+      <div class="feature">
+        <div>
+          <h3>Teaching Bacterial Chemotaxis</h3>
+          <p>An interactive browser simulator of <i>E. coli</i> chemotaxis. Change CheR and CheB rates, cooperativity and gradients, and watch receptor methylation produce exact adaptation in real time. Switch off CheB selectivity and robustness breaks. Equations, pathway and implementation notes are built in; the source comes with exercises for computer science students.</p>
+          <div class="toplinks" style="margin-top:6px">
+            <a class="btn primary" href="https://granada-lab.github.io/chemotaxis/">Open the simulator</a>
+            <a class="btn" href="https://github.com/Granada-Lab/chemotaxis">Source code</a>
+          </div>
+        </div>
+        <div class="viz" aria-hidden="true">
+          <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">
+            <defs><radialGradient id="g" cx="78%" cy="50%" r="60%"><stop offset="0" stop-color="var(--accent)" stop-opacity=".35"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></radialGradient></defs>
+            <rect width="400" height="200" fill="url(#g)"/>
+            <circle cx="312" cy="100" r="5" fill="var(--accent)"/>
+            <g fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".75">
+              <polyline points="30,40 70,52 64,80 110,74 150,96 142,60 190,78 232,88 270,96"/>
+              <polyline points="40,160 84,146 76,120 126,132 160,112 204,124 196,100 246,104 284,102"/>
+              <polyline points="20,100 58,112 96,92 92,130 140,118 184,108 228,98"/>
+            </g>
+            <g fill="#22a35a"><ellipse cx="270" cy="96" rx="7" ry="3"/><ellipse cx="284" cy="102" rx="7" ry="3"/><ellipse cx="228" cy="98" rx="7" ry="3"/></g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="software">
+    <div class="wrap">
+      <h2>Software</h2>
+      <div class="grid">
+        <article class="tool">
+          <h3>pyBOAT</h3>
+          <p>Open-source Python package for time-frequency analysis of biological oscillations: wavelet analysis, ridge detection and batch processing, with a graphical interface. Used in research and teaching.</p>
+          <p class="links"><a href="https://github.com/tensionhead/pyBOAT">Code</a><a href="https://doi.org/10.1101/2020.04.29.067744">Reference paper</a></p>
+        </article>
+        <article class="tool">
+          <h3>TimeSeriesAnalysis</h3>
+          <p>Python tools for single-cell time-series analysis of circadian dynamics and drug response, used across the group's live-cell imaging studies.</p>
+          <p class="links"><a href="https://github.com/Granada-Lab/TimeSeriesAnalysis">Code</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="wrap">
+      <h2>Publications &amp; code</h2>
+      <div class="grid">
+      <article class="pub">
+        <p class="meta"><span class="journal">Cell Reports</span> <span class="year">2026</span></p>
+        <h3>Circadian rhythm heterogeneity modulates drug response variations in neuroblastoma models</h3>
+        <p class="authors">Ector C et al.</p>
+        <p class="links"><a href="https://doi.org/10.1016/j.celrep.2026.116975">Paper</a><a href="https://github.com/Granada-Lab/Circ-Neuroblastoma">Code</a></p>
+      </article>
+      <article class="pub">
+        <p class="meta"><span class="journal">IEEE Transactions on Medical Imaging</span> <span class="year">2026</span><span class="note">in press</span></p>
+        <h3>TransientTrack: advanced multi-object tracking and classification of cancer cells with transient fluorescent signals</h3>
+        <p class="authors">Bürger F et al.</p>
+        <p class="links"><a href="https://doi.org/10.48550/arXiv.2512.01885">Preprint</a><a href="https://github.com/Granada-Lab/Automatic-single-cell-tracking-of-fading-objects">Code</a></p>
+      </article>
+      <article class="pub">
+        <p class="meta"><span class="journal">Nature Physics</span> <span class="year">2025</span></p>
+        <h3>Circadian coupling orchestrates cell growth</h3>
+        <p class="authors">Gutu N et al.</p>
+        <p class="links"><a href="https://doi.org/10.1038/s41567-025-02838-4">Paper</a><a href="https://github.com/Granada-Lab/Circadian-clock-cell-cycle">Code</a></p>
+      </article>
+      <article class="pub">
+        <p class="meta"><span class="journal">Molecular Systems Biology</span> <span class="year">2025</span></p>
+        <h3>Circadian clock features define novel subtypes among breast cancer cells and shape drug sensitivity</h3>
+        <p class="authors">Ector C et al.</p>
+        <p class="links"><a href="https://doi.org/10.1038/s44320-025-00092-7">Paper</a><a href="https://github.com/Granada-Lab/Circadian-Subtypes-Breast-Cancer-Cells">Code</a></p>
+      </article>
+      <article class="pub">
+        <p class="meta"><span class="journal">Communications Biology</span> <span class="year">2025</span></p>
+        <h3>A combined mathematical and experimental approach reveals the drivers of time-of-day drug sensitivity in human cells</h3>
+        <p class="authors">Gutu N et al.</p>
+        <p class="links"><a href="https://doi.org/10.1038/s42003-025-07931-1">Paper</a><a href="https://github.com/Granada-Lab/drivers_ToD_drug_sensitivity">Code</a></p>
+      </article>
+      <article class="pub">
+        <p class="meta"><span class="journal">Nature Communications</span> <span class="year">2024</span></p>
+        <h3>Time-of-day effects of cancer drugs revealed by high-throughput deep phenotyping</h3>
+        <p class="authors">Ector C et al.</p>
+        <p class="links"><a href="https://doi.org/10.1038/s41467-024-51611-3">Paper</a><a href="https://github.com/Granada-Lab/Time-of-Day-Drug-Response">Code</a></p>
+      </article>
+      <article class="pub">
+        <p class="meta"><span class="journal">Communications Biology</span> <span class="year">2023</span></p>
+        <h3>p53 and p21 dynamics encode single-cell DNA damage levels, fine-tuning proliferation and shaping population heterogeneity</h3>
+        <p class="authors">Gutu N et al.</p>
+        <p class="links"><a href="https://doi.org/10.1038/s42003-023-05585-5">Paper</a><a href="https://github.com/Granada-Lab/proliferation-p53-p21">Code</a></p>
+      </article>
+      <article class="pub">
+        <p class="meta"><span class="journal">Molecular Biology of the Cell</span> <span class="year">2020</span></p>
+        <h3>The effects of proliferation status and cell cycle phase on the responses of single cells to chemotherapy</h3>
+        <p class="authors">Granada AE et al.</p>
+        <p class="links"><a href="https://doi.org/10.1091/mbc.E19-10-0568">Paper</a><a href="https://github.com/Granada-Lab/TimeSeriesAnalysis">Code</a></p>
+      </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Full publication list on <a href="https://scholar.google.com/citations?user=qoyqHzYAAAAJ&amp;sortby=pubdate">Google Scholar</a> · all repositories on <a href="https://github.com/Granada-Lab">GitHub</a>.</p>
+    <p>Code is released under the MIT licence. For correspondence, see the author information in the associated publications.</p>
+  </div>
+</footer>
+</body>
+</html>
